@@ -76,10 +76,34 @@ const handleMap = () => {
   //맵 엔트리(이터레이터?)는 또 뭔가?
 
   const spread = [...mapFilter];
-  console.log('spread syntax', spread);
-  console.log('spread syntax', spread.sort()); // 정렬 가능!!
-  console.log('spread syntax', spread[1]);
-  console.log('원본 비교 ', mapFilter);
+  // console.log('spread syntax', spread);
+  // console.log('spread syntax', spread.sort()); // 정렬 가능!!
+  // console.log('spread syntax', spread[1]);
+  // console.log('원본 비교 ', mapFilter);
+
+  /**
+   * mapFilter =>
+   * {
+   *    "색상": "옐로",
+   *    "견종": "리트리버",
+   *    "나이": 9,
+   * }
+   * --> 이 map 객체를 스프레드 연산 후 배열에 담으면 sort 사용 가능
+   */
+
+  const spreadMapFilter = [...mapFilter];
+
+  for (const [key, value] of spreadMapFilter.sort()) {
+    // console.log("chk key,value -->", key, value);
+  }
+
+  const arr = spreadMapFilter.sort().map((iter) => {
+    // console.log(iter);
+    return [key,value] = iter
+  });
+
+  console.log('final arr', new Map(arr)) // just in case you like to convert it into the Map Obj.
+
 };
 
 module.exports = { handleMap };
