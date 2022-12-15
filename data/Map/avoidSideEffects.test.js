@@ -1,5 +1,5 @@
-const {main} = require('./avoidSideEffects')
+const { main } = require("./avoidSideEffects");
 
-test('MAIN', () => {
-    main()
-})
+test("MAIN", () => {
+  main();
+});
